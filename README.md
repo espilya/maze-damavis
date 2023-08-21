@@ -15,7 +15,7 @@
 Add or select mazes inside `main.py` and execute the file.
 
 ### Input:
-Add new input as list python
+Add new input as python list
 ```
 labyrinth_5 = [[".", ".", ".", ".", ".", "#", ".", ".", "."],
                [".", ".", ".", ".", ".", "#", ".", ".", "."],
