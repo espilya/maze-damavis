@@ -21,6 +21,8 @@ def search_recursive_bruteforce(sim, steps, last_action):
     """
     Recursive bruteforce solution. Tries all possible movements.
     Not the best possible solution for this problem.
+    Es la solucion mas basica. Es posible hacerla mas eficiente en terminos de memoria y tiempo,
+    pero no estoy seguro como implementarla usando grafos, ya que el rod es de una forma irregular
     """
     actions_list = ["RIGHT", "DOWN", "UP", "LEFT", "ROTATE"]
     ok = False
@@ -82,7 +84,8 @@ class Controller:
 
     def search(self):
         """
-        Automatic search
+        Automatic search.
+        Returns minimal number of steps or -1
         """
         # Init simulation
         sim = Simulation(self.maze)
@@ -107,6 +110,7 @@ class Controller:
     def manual(self):
         """
         Manual controller version
+        Returns number of steps
         """
         sim = Simulation(self.maze)
         sim.print()
@@ -136,9 +140,8 @@ class Controller:
 
                 sim.print()
                 if sim.check_end():
-                    return steps
-                    print("Maze finished in ", steps, " movements!")
                     end = True
+                    return steps
 
         except KeyboardInterrupt:
             pass

@@ -1,4 +1,3 @@
-
 from controller import *
 
 
@@ -34,7 +33,8 @@ def main():
                    [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
                    [".", ".", ".", ".", ".", ".", ".", ".", ".", "."]]
 
-    # Additional tests
+    # ------------------------
+    # --- Additional tests ---
     m = 10
     blank_maze = []
     for i in range(m):
@@ -49,12 +49,15 @@ def main():
                    [".", ".", ".", "#", "#", ".", ".", ".", "."],
                    [".", ".", ".", ".", ".", ".", ".", ".", "."]]
 
-    c = Controller(blank_maze)
+    # ------------------------
 
-    ## automatic mode
+    # Create controller
+    c = Controller(labyrinth_3)
+
+    # automatic mode
     print(c.search())
 
-    ## manual mode
+    # manual mode
     # print("Maze finished in ", c.manual(), " movements!")
 
 

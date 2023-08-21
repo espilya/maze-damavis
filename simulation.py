@@ -1,6 +1,10 @@
 from rod import *
 import copy
 
+"""
+Las coordenadas estan al revez ya que la entrada viene por [y][x], para no complicar la solucion lo deje tal cual
+"""
+
 # Variables for representation
 WALL = "#"
 EMPTY = "."
