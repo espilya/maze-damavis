@@ -1,4 +1,4 @@
-from simulation import *
+
 from controller import *
 
 
@@ -34,8 +34,28 @@ def main():
                    [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
                    [".", ".", ".", ".", ".", ".", ".", ".", ".", "."]]
 
-    c = Controller(labyrinth_1)
-    c.manual()
+    # Additional tests
+    m = 10
+    blank_maze = []
+    for i in range(m):
+        sublist = []
+        for j in range(m):
+            sublist.append(".")
+        blank_maze.append(sublist)
+
+    labyrinth_5 = [[".", ".", ".", ".", ".", "#", ".", ".", "."],
+                   [".", ".", ".", ".", ".", "#", ".", ".", "."],
+                   [".", ".", ".", ".", ".", "#", ".", ".", "."],
+                   [".", ".", ".", "#", "#", ".", ".", ".", "."],
+                   [".", ".", ".", ".", ".", ".", ".", ".", "."]]
+
+    c = Controller(blank_maze)
+
+    ## automatic mode
+    print(c.search())
+
+    ## manual mode
+    # print("Maze finished in ", c.manual(), " movements!")
 
 
 if __name__ == '__main__':

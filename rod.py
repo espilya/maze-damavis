@@ -1,4 +1,7 @@
 class Rod:
+    """
+    Rod object
+    """
 
     def __init__(self):
         self.length = 3
@@ -8,6 +11,9 @@ class Rod:
 
 
     def move(self, move):
+        """
+        MOves the Rod
+        """
         if move == "UP":    # up
             self.positions = [(item[0] - 1, item[1]) for item in self.positions]
         elif move == "DOWN":  # down
@@ -18,7 +24,10 @@ class Rod:
             self.positions = [(item[0], item[1] - 1) for item in self.positions]
 
     def rotate(self):
-        # TODO: simplificar
+        """
+        Rotates the rod
+        """
+        # TODO: simplificar y hacer independiente del tamano del ROD
         if self.vertical_orientation:
             self.positions[0] = (self.positions[1][0], self.positions[1][1]-1)
             self.positions[1] = (self.positions[1][0], self.positions[1][1])
@@ -28,4 +37,8 @@ class Rod:
             self.positions[1] = (self.positions[1][0],   self.positions[1][1])
             self.positions[2] = (self.positions[1][0]+1, self.positions[1][1])
 
+        # print(self.positions)
+        # for i in range(self.length):
+        #     self.positions[i] = (self.positions[i][1], self.positions[i][0])
+        # print(self.positions)
         self.vertical_orientation = not self.vertical_orientation
